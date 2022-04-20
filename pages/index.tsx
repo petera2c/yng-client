@@ -29,7 +29,7 @@ const Home: NextPage = () => {
       </Head>
 
       <main>
-        <h1>My test app for Next JS</h1>
+        <h1 className="text-3xl font-bold underline">Hello world!</h1>
       </main>
 
       <footer></footer>
