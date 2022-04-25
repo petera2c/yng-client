@@ -1,6 +1,5 @@
 import type { NextPage } from "next";
 import Head from "next/head";
-import Image from "next/image";
 import Script from "next/script";
 
 const Home: NextPage = () => {
@@ -38,6 +37,7 @@ const Home: NextPage = () => {
         <h4 className="text-white text-2xl">
           Might build some SVG graphs and some sorting for a variety of tickers.
         </h4>
+        <button>View Stock List Here</button>
       </main>
 
       <footer></footer>
