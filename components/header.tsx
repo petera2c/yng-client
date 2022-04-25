@@ -4,8 +4,8 @@ const Header = () => {
   return (
     <header className="flex gap-4 bg-white py-4 px-4">
       <HeaderButton buttonText="Home" link="/" />
-      <HeaderButton buttonText="Stocks" link="/stocks" />
       <HeaderButton buttonText="Graphs" link="/graphs" />
+      <HeaderButton buttonText="Stocks" link="/stocks" />
     </header>
   );
 };
@@ -18,7 +18,7 @@ interface Props {
 const HeaderButton = ({ buttonText, link }: Props) => {
   return (
     <Link href={link}>
-      <a className="text-blue-400 underline">{buttonText}</a>
+      <a>{buttonText}</a>
     </Link>
   );
 };

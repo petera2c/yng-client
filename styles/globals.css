@@ -7,19 +7,13 @@
   body {
     font-family: "Nunito Sans";
   }
-}
-
-html,
-body {
-  padding: 0;
-  margin: 0;
-}
-
-a {
-  color: inherit;
-  text-decoration: none;
-}
-
-* {
-  box-sizing: border-box;
+  h1 {
+    @apply text-6xl;
+  }
+  h4 {
+    @apply text-2xl;
+  }
+  a {
+    @apply text-blue-600 underline;
+  }
 }
