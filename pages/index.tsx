@@ -1,8 +1,9 @@
-import type { NextPage } from "next";
 import Head from "next/head";
 import Script from "next/script";
 
-const Home: NextPage = () => {
+import Page from "../components/containers/page";
+
+const Home = () => {
   return (
     <>
       <Script
@@ -27,20 +28,14 @@ const Home: NextPage = () => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <main
-        className="flex flex-col items-center justify-center gap-6 bg-gradient-to-b from-fuchsia-700"
-        style={{ minHeight: "100vh" }}
-      >
+      <Page className="flex flex-col items-center justify-center gap-6 bg-gradient-to-b from-fuchsia-700">
         <h1 className="text-white text-6xl">
           Playing around with some stock APIs
         </h1>
         <h4 className="text-white text-2xl">
           Might build some SVG graphs and some sorting for a variety of tickers.
         </h4>
-        <button>View Stock List Here</button>
-      </main>
-
-      <footer></footer>
+      </Page>
     </>
   );
 };

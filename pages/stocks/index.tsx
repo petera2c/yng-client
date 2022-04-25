@@ -1,7 +1,11 @@
-import React, { Component } from "react";
+import Page from "../../components/containers/page";
 
-const stocks = () => {
-  return <div>Search stocks here</div>;
+const Stocks = () => {
+  return (
+    <Page>
+      <h1>Page is in development and there is nothing to see here yet!</h1>
+    </Page>
+  );
 };
 
-export default stocks;
+export default Stocks;
