@@ -2,7 +2,7 @@ import Page from "../../components/containers/page";
 
 const Stocks = () => {
   return (
-    <Page>
+    <Page title="Stocks">
       <h1>Page is in development and there is nothing to see here yet!</h1>
     </Page>
   );

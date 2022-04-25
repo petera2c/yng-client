@@ -1,5 +1,7 @@
+import Page from "../components/containers/page";
+
 const GraphsPage = () => {
-  return <div>Graphs Page</div>;
+  return <Page title="Graphs">Graphs Page</Page>;
 };
 
 export default GraphsPage;
