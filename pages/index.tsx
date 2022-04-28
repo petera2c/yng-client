@@ -20,13 +20,10 @@ const Home = () => {
           });
         `}
       </Script>
-      <Page
-        className="flex flex-col items-center justify-center bg-gradient-to-b from-fuchsia-700"
-        title="Home"
-      >
+      <Page className="flex flex-col items-center justify-center" title="Home">
         <div className="flex flex-col gap-6 max-w-screen-lg">
-          <h1 className="text-white text-center">Side Project built on AWS</h1>
-          <h4 className="text-white text-center">
+          <h1 className="text-center">Side Project built on AWS</h1>
+          <h4 className="text-center">
             Front-end is built with Next JS, React and Tailwind. Back-end can be
             found here:{" "}
             <a
