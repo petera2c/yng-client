@@ -1,24 +1,53 @@
 import Link from "next/link";
+import { useMemo } from "react";
+import { useRouter } from "next/router";
+
+const routes = [
+  { label: "Home", pathname: "/" },
+  { label: "Go to app", pathname: "/app" },
+  { label: "Pre-made tables", pathname: "/pre-made-tables", includes: true },
+];
 
 const Header = () => {
+  const { pathname } = useRouter();
+
   return (
-    <header className="flex gap-4 bg-white py-4 px-4">
-      <HeaderButton buttonText="Home" link="/" />
-      <HeaderButton buttonText="Graphs" link="/graphs" />
-      <HeaderButton buttonText="Stocks" link="/stocks" />
+    <header className="flex gap-4 bg-white shadow py-4 px-16">
+      {routes.map((route, index) => (
+        <HeaderButton
+          index={index}
+          isActive={
+            route.includes
+              ? pathname.includes(route.pathname)
+              : pathname === route.pathname
+          }
+          key={index}
+          label={route.label}
+          link={route.pathname}
+        />
+      ))}
     </header>
   );
 };
 
-interface Props {
-  buttonText: string;
+const HeaderButton = ({
+  index,
+  label,
+  isActive,
+  link,
+}: {
+  index: any;
+  label: string;
+  isActive: any;
   link: string;
-}
-
-const HeaderButton = ({ buttonText, link }: Props) => {
+}) => {
+  const className = useMemo(
+    () => `${isActive ? "button-pill active" : "button-pill"}`,
+    [isActive]
+  );
   return (
     <Link href={link}>
-      <a>{buttonText}</a>
+      <button className={className}>{label}</button>
     </Link>
   );
 };
