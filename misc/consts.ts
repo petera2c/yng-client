@@ -5,7 +5,7 @@ export const QUARTERLY_OPTIONS = [
   { label: "Q3", value: "Q3" },
   { label: "Q4", value: "Q4" },
 ];
-export const STOCK_FILTER_ATTRIBUTES = [
+export const QUARTERLY_FILTER_ATTRIBUTES = [
   { label: "Cost and expenses growth", value: "cost_and_expenses" },
   { label: "Cost of revenue growth", value: "cost_of_revenue" },
   {
@@ -38,4 +38,17 @@ export const STOCK_FILTER_ATTRIBUTES = [
     label: "Selling general and administrative expenses growth",
     value: "selling_general_and_administrative_expenses",
   },
+];
+
+export const STOCK_FILTER_ATTRIBUTES = [
+  { label: "Company name", value: "company_name" },
+  { label: "Country", value: "country" },
+  { label: "Forward P/E", value: "fwd_pe_ratio" },
+  { label: "Industry", value: "industry" },
+  { label: "Is ETF", value: "is_eft" },
+  { label: "Market cap", value: "market_cap" },
+  { label: "P/E ratio", value: "pe_ratio" },
+  { label: "P/S ratio", value: "ps_ratio" },
+  { label: "Sector", value: "sector" },
+  { label: "Ticker", value: "ticker" },
 ];

@@ -4,7 +4,13 @@ import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 
 import Header from "components/header";
 
-const queryClient = new QueryClient();
+const queryClient = new QueryClient({
+  defaultOptions: {
+    queries: {
+      retry: 0,
+    },
+  },
+});
 
 function MyApp({ Component, pageProps }: AppProps) {
   return (
