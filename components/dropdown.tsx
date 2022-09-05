@@ -13,26 +13,24 @@ export type Option = {
 };
 
 const Dropdown = ({
-  initialIndex = 0,
+  activeIndex,
   onValueChange,
   options,
   title,
 }: {
-  initialIndex?: number;
+  activeIndex: number;
   onValueChange: Dispatch<SetStateAction<any>>;
   options: Option[];
-  title: string;
+  title: (option: Option) => string;
 }) => {
-  const [activeIndex, setActiveIndex] = useState(initialIndex);
-
-  useEffect(() => {
-    onValueChange(options[activeIndex]);
-  }, [activeIndex, onValueChange]);
   return (
     <Menu as="div" className="relative inline-block text-left">
       <div>
-        <Menu.Button className="inline-flex justify-center w-full rounded-md border border-gray-300 shadow-sm px-4 py-2 bg-white text-sm font-medium text-gray-700 hover:bg-gray-50">
-          {title}
+        <Menu.Button
+          className="flex items-center w-full rounded-md border border-gray-300 shadow-sm px-4 bg-white text-sm font-medium text-gray-700 hover:bg-gray-50"
+          style={{ paddingTop: "11px", paddingBottom: "11px" }}
+        >
+          {title(options[activeIndex])}
           <ChevronDownIcon className="-mr-1 ml-2 h-5 w-5" aria-hidden="true" />
         </Menu.Button>
       </div>
@@ -50,14 +48,15 @@ const Dropdown = ({
           <div className="py-1">
             {options.map((option, index) => (
               <button
-                className={classNames(
-                  activeIndex === index
-                    ? "bg-purple-300 text-white"
-                    : "text-gray-700 hover:bg-purple-100",
-                  "w-full px-4 py-2 text-sm"
-                )}
+                className={`w-full px-4 py-2 text-sm 
+                 ${
+                   activeIndex === index
+                     ? "bg-purple-300 text-white"
+                     : "text-gray-700 hover:bg-purple-100"
+                 }
+                `}
                 key={index}
-                onClick={() => setActiveIndex(index)}
+                onClick={() => onValueChange(index)}
               >
                 {option.label}
               </button>

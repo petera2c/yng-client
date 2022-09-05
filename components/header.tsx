@@ -4,7 +4,7 @@ import { useRouter } from "next/router";
 
 const routes = [
   { label: "Home", pathname: "/" },
-  { label: "Go to app", pathname: "/app" },
+  { label: "Go to app", pathname: "/build-your-own" },
   { label: "Pre-made tables", pathname: "/pre-made-tables", includes: true },
 ];
 
@@ -15,7 +15,6 @@ const Header = () => {
     <header className="flex gap-4 bg-white shadow py-4 px-16">
       {routes.map((route, index) => (
         <HeaderButton
-          index={index}
           isActive={
             route.includes
               ? pathname.includes(route.pathname)
@@ -31,18 +30,16 @@ const Header = () => {
 };
 
 const HeaderButton = ({
-  index,
   label,
   isActive,
   link,
 }: {
-  index: any;
   label: string;
   isActive: any;
   link: string;
 }) => {
   const className = useMemo(
-    () => `${isActive ? "button-pill active" : "button-pill"}`,
+    () => `button-text ${isActive && "active"}`,
     [isActive]
   );
   return (

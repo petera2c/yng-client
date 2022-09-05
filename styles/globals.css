@@ -24,25 +24,38 @@
       border var(--transition-time), color var(--transition-time);
   }
 
-  .button-pill {
-    @apply font-bold py-2 px-4;
+  .button-text {
+    @apply font-bold py-2;
   }
-  .button-pill:hover {
-    @apply border-b-8 border-purple-300;
-    color: "red";
+  .button-text:hover {
+    @apply border-b-4 border-purple-300;
   }
-  .button-pill.active {
-    @apply border-b-8 border-purple-500;
+  .button-text.active {
+    @apply border-b-4 border-purple-500;
   }
 
-  .button-default {
+  .button-primary {
     @apply bg-purple-500 font-bold text-white py-2 px-4 rounded-full;
   }
-  .button-default:hover {
+  .button-primary:hover {
     @apply bg-purple-700;
+  }
+
+  .button-secondary {
+    @apply bg-white border-2 border-purple-500 font-bold text-purple-500 py-2 px-4 rounded-full;
+  }
+  .button-secondary:hover {
+    @apply bg-purple-500 text-white;
   }
 
   .button-cover:hover {
     @apply bg-purple-100;
+  }
+
+  .button-link {
+    @apply text-blue-500 underline underline-offset-4;
+  }
+  .button-link:hover {
+    @apply text-blue-900;
   }
 }
