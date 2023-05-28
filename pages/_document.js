@@ -8,13 +8,21 @@ class MyDocument extends Document {
         <Head>
           <link rel="icon" href="/favicon.ico" />
 
+          {/* Preconnect */}
           <link rel="preconnect" href="https://fonts.googleapis.com" />
           <link rel="preconnect" href="https://fonts.gstatic.com" />
+
+          {/* Fonts */}
+          <link
+            href="https://fonts.googleapis.com/css2?family=Quicksand&display=swap"
+            rel="stylesheet"
+          />
           <link
             href="https://fonts.googleapis.com/css2?family=Festive&family=Nunito+Sans&display=swap"
             rel="stylesheet"
           />
 
+          {/* Global Site Tag (gtag.js) - Google Analytics */}
           <Script
             id="gtag-1"
             strategy="lazyOnload"

@@ -1,6 +1,6 @@
 import React, { useEffect, useMemo, useState } from "react";
 import Page from "components/containers/page";
-import { useQuery, useQueryClient } from "@tanstack/react-query";
+import { useQuery } from "@tanstack/react-query";
 import axios from "axios";
 import {
   API_URL,
@@ -10,11 +10,11 @@ import {
 } from "misc/consts";
 import Company from "types/Company";
 import { XIcon, PlusIcon } from "@heroicons/react/solid";
-import Dropdown, { Option } from "components/dropdown";
 import moment from "moment";
 import { capitalize, startCase } from "lodash";
 import { isNumeric } from "misc/util";
 import Link from "next/link";
+import { Dropdown, Select } from "antd";
 const STOCKS_START_YEAR = 1980;
 
 const createStockYearArray = () => {
@@ -33,11 +33,11 @@ const createOrderByOptions = (filters: Filter[]) => [
 const STOCK_YEAR_ARRAY = createStockYearArray();
 
 type Filter = {
-  attribute: Option;
-  fromYear: Option;
-  fromQuarterly: Option;
-  toYear: Option;
-  toQuarterly: Option;
+  attribute: any;
+  fromYear: any;
+  fromQuarterly: any;
+  toYear: any;
+  toQuarterly: any;
 };
 
 const App = () => {
@@ -65,7 +65,7 @@ const App = () => {
     setEditingToQuarterlyIndex(0);
   };
 
-  const search = (filters: Filter[], orderBy: Option) =>
+  const search = (filters: Filter[], orderBy: any) =>
     axios.post(`${API_URL}/make-your-own`, {
       filters: filters.map((filter) => ({
         attribute: filter.attribute.value,
@@ -77,14 +77,11 @@ const App = () => {
       orderBy: orderBy.value,
     });
 
-  const { data, status } = useQuery(
-    [...filters, orderByOptions[orderByIndex]],
-    () => {
-      if (filters.length > 0)
-        return search(filters, orderByOptions[orderByIndex]);
-      else return undefined;
-    }
-  );
+  const { data } = useQuery([...filters, orderByOptions[orderByIndex]], () => {
+    if (filters.length > 0)
+      return search(filters, orderByOptions[orderByIndex]);
+    else return undefined;
+  });
   console.log(data);
 
   useEffect(() => {
@@ -93,45 +90,32 @@ const App = () => {
 
   return (
     <Page className="flex flex-col items-center gap-4" title="Main app">
-      <h1 className="text-center mt-6 mb-8">
-        Query the stock market like a pro
-      </h1>
       <div className="container max-w-3xl flex flex-col gap-4">
         <div className="flex w-full justify-between gap-4">
           {isEditingFilter && (
             <div className="flex flex-col gap-2">
-              <Dropdown
-                activeIndex={editingAttributeIndex}
-                onValueChange={setEditingAttributeIndex}
+              <Select
+                onChange={setEditingAttributeIndex}
                 options={QUARTERLY_FILTER_ATTRIBUTES}
-                title={(option: Option) => `${option?.label}`}
               />
               <div className="flex justify-between gap-2">
-                <Dropdown
-                  activeIndex={editingFromYearIndex}
-                  onValueChange={setEditingFromYearIndex}
+                <Select
+                  onChange={setEditingFromYearIndex}
                   options={STOCK_YEAR_ARRAY}
-                  title={(option: Option) => `From year: ${option.label}`}
                 />
-                <Dropdown
-                  activeIndex={editingToYearIndex}
-                  onValueChange={setEditingToYearIndex}
+                <Select
+                  onChange={setEditingToYearIndex}
                   options={STOCK_YEAR_ARRAY}
-                  title={(option: Option) => `To year: ${option.label}`}
                 />
               </div>
               <div className="flex justify-between gap-2">
-                <Dropdown
-                  activeIndex={editingFromQuarterlyIndex}
-                  onValueChange={setEditingFromQuarterlyIndex}
+                <Select
+                  onChange={setEditingFromQuarterlyIndex}
                   options={QUARTERLY_OPTIONS}
-                  title={(option: Option) => `From quarterly: ${option.label}`}
                 />
-                <Dropdown
-                  activeIndex={editingToQuarterlyIndex}
-                  onValueChange={setEditingToQuarterlyIndex}
+                <Select
+                  onChange={setEditingToQuarterlyIndex}
                   options={QUARTERLY_OPTIONS}
-                  title={(option: Option) => `To quarterly: ${option.label}`}
                 />
               </div>
             </div>
@@ -180,12 +164,7 @@ const App = () => {
             )}
 
             {orderByOptions.length > 0 && (
-              <Dropdown
-                activeIndex={orderByIndex}
-                onValueChange={setOrderByIndex}
-                options={orderByOptions}
-                title={(option: Option) => `Order by: ${option?.label}`}
-              />
+              <Select onChange={setOrderByIndex} options={orderByOptions} />
             )}
           </div>
         </div>
@@ -243,10 +222,10 @@ const App = () => {
                   </div>
                 ))}
               {Object.keys(company).map((columnName, index) => {
-                if (columnName === "ticker")
+                /* if (columnName === "ticker")
                   return (
                     <div className="flex items-start" key={index}>
-                      <Link href={"/" + company[columnName]}>
+                      <Link href={"/company/" + company[columnName]}>
                         <button
                           className="button-link"
                           style={{ gridColumn: index + 1 }}
@@ -255,7 +234,7 @@ const App = () => {
                         </button>
                       </Link>
                     </div>
-                  );
+                  );*/
                 if (isNumeric(company[columnName]))
                   return (
                     <div
