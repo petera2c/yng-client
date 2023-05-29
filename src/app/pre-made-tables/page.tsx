@@ -1,8 +1,10 @@
+"use client";
+
 import React from "react";
 import Link from "next/link";
 import moment from "moment";
-
-import Page from "components/containers/page";
+import Page from "../../components/containers/page";
+import { Button } from "antd";
 
 const TABLE_ROUTE_LIST = [
   {
@@ -21,6 +23,7 @@ const PremadeTables = () => {
       <div className="flex flex-wrap justify-center gap-8 p-8">
         {TABLE_ROUTE_LIST.map((tableRoute, index) => (
           <TableRouteButton
+            key={index}
             label={tableRoute.label}
             pathname={tableRoute.pathname}
           />
@@ -39,9 +42,7 @@ const TableRouteButton = ({
 }) => {
   return (
     <Link href={pathname}>
-      <button className="button-cover cursor-pointer rounded shadow-md p-8">
-        {label}
-      </button>
+      <Button>{label}</Button>
     </Link>
   );
 };

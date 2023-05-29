@@ -1,5 +1,7 @@
 * {
-  font-family: quicksand;
+  font-family: var(--font-nunito);
+  padding: 0;
+  margin: 0;
 }
 
 .flex {
@@ -53,6 +55,12 @@
 }
 .gap-4 {
   gap: 4rem;
+}
+.gap-5 {
+  gap: 5rem;
+}
+.gap-6 {
+  gap: 6rem;
 }
 
 .p-1 {

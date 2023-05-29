@@ -1,6 +1,6 @@
 import Link from "next/link";
-import { useRouter } from "next/router";
 import { Button } from "antd";
+import { usePathname } from "next/navigation";
 
 const routes = [
   { label: "Home", pathname: "/" },
@@ -9,7 +9,7 @@ const routes = [
 ];
 
 const Header = () => {
-  const { pathname } = useRouter();
+  const pathname = usePathname();
 
   return (
     <header className="flex gap-1 bg-white shadow py-1 px-4">

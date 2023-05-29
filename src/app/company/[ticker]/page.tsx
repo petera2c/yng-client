@@ -1,13 +1,14 @@
+"use client";
+
 import React from "react";
-import { useRouter } from "next/router";
-import Page from "components/containers/page";
+import { useRouter } from "next/navigation";
 import { useQuery } from "@tanstack/react-query";
 import axios from "axios";
-import { API_URL } from "misc/consts";
-
+import { API_URL } from "../../../misc/consts";
+import Page from "../../../components/containers/page";
 const CompanyInfo = () => {
   const router = useRouter();
-  const { ticker } = router.query;
+  const ticker = "router.query";
 
   const stockData = useQuery([ticker], async () => {
     if (ticker) return (await axios.get(`${API_URL}/companies/${ticker}`)).data;

@@ -1,16 +1,16 @@
-import React, { useEffect } from "react";
+"use client";
+
+import React from "react";
 import axios from "axios";
 import moment from "moment";
-import { QueryClient, useQuery } from "@tanstack/react-query";
-import Page from "components/containers/page";
-import Company from "types/Company";
-import { API_URL } from "misc/consts";
-const queryClient = new QueryClient();
+import { useQuery } from "@tanstack/react-query";
+import Page from "../../components/containers/page";
+import { API_URL } from "../../misc/consts";
+import Company from "../../types/Company";
 
 const FastestGrowingCompanies = () => {
-  const { isLoading, error, data } = useQuery(
-    ["fastest-growing-companies"],
-    () => axios.get(`${API_URL}/fastest-growing-companies`)
+  const { data } = useQuery(["fastest-growing-companies"], () =>
+    axios.get(`${API_URL}/fastest-growing-companies`)
   );
 
   return (

@@ -1,5 +1,5 @@
 import Head from "next/head";
-import Header from "../header";
+import Header from "../Header";
 
 interface Props {
   children: JSX.Element[] | JSX.Element | string;

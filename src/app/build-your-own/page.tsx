@@ -1,20 +1,23 @@
+"use client";
+
 import React, { useEffect, useMemo, useState } from "react";
-import Page from "components/containers/page";
 import { useQuery } from "@tanstack/react-query";
 import axios from "axios";
-import {
-  API_URL,
-  QUARTERLY_OPTIONS,
-  QUARTERLY_FILTER_ATTRIBUTES,
-  STOCK_FILTER_ATTRIBUTES,
-} from "misc/consts";
-import Company from "types/Company";
+
 import { XIcon, PlusIcon } from "@heroicons/react/solid";
 import moment from "moment";
 import { capitalize, startCase } from "lodash";
-import { isNumeric } from "misc/util";
-import Link from "next/link";
-import { Dropdown, Select } from "antd";
+import { Select } from "antd";
+import {
+  API_URL,
+  QUARTERLY_FILTER_ATTRIBUTES,
+  QUARTERLY_OPTIONS,
+} from "../../misc/consts";
+import Page from "../../components/containers/page";
+import Company from "../../types/Company";
+
+import { isNumeric } from "../../misc/util";
+
 const STOCKS_START_YEAR = 1980;
 
 const createStockYearArray = () => {

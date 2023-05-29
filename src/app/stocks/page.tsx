@@ -1,3 +1,5 @@
+"use client";
+
 import Page from "../../components/containers/page";
 
 const Stocks = () => {
