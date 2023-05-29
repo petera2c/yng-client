@@ -56,7 +56,7 @@ const App = () => {
 
   const orderByOptions = useMemo(() => {
     return createOrderByOptions(filters);
-  }, [createOrderByOptions, filters]);
+  }, [filters]);
 
   const [orderByIndex, setOrderByIndex] = useState(0);
 
@@ -89,7 +89,7 @@ const App = () => {
 
   useEffect(() => {
     if (!orderByIndex) setOrderByIndex(0);
-  }, [orderByOptions]);
+  }, [orderByIndex]);
 
   return (
     <Page className="flex flex-col items-center gap-4" title="Main app">

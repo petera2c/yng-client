@@ -4,6 +4,17 @@
   margin: 0;
 }
 
+h1 {
+  font-size: 3rem;
+  font-weight: 700;
+  line-height: 1.2;
+}
+h4 {
+  font-size: 1.5rem;
+  font-weight: 400;
+  line-height: 1.2;
+}
+
 .flex {
   display: flex;
 }
@@ -42,6 +53,16 @@
 }
 .flex-1 {
   flex: 1;
+}
+
+.text-center {
+  text-align: center;
+}
+.text-right {
+  text-align: right;
+}
+.text-left {
+  text-align: left;
 }
 
 .gap-1 {
@@ -253,4 +274,32 @@
 .my-4 {
   margin-top: 4rem;
   margin-bottom: 4rem;
+}
+
+.w-1\/12 {
+  width: 8.333333%;
+}
+.w-2\/12 {
+  width: 16.666667%;
+}
+.w-3\/12 {
+  width: 25%;
+}
+.w-4\/12 {
+  width: 33.333333%;
+}
+.w-5\/12 {
+  width: 0.416666;
+}
+.w-6\/12 {
+  width: 50%;
+}
+.w-8\/12 {
+  width: 66.666667%;
+}
+.w-10\/12 {
+  width: 83.333333%;
+}
+.w-12\/12 {
+  width: 100%;
 }

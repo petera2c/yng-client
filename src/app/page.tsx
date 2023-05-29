@@ -10,10 +10,13 @@ const Home = () => {
         style={{ marginTop: "18vh" }}
       >
         <h1 className="text-center text-6xl">
-          The best way to search the stock market
+          Unlock Financial Insights
+          <br />
+          with FinSearch!
         </h1>
-        <h4 className="text-center">
-          Search and order stocks by growth or a variety of other attributes
+        <h4 className="text-center w-8/12">
+          Effortlessly discover and invest in stocks with strong growth
+          potential using advanced search and filtering
         </h4>
       </div>
     </Page>
