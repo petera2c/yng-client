@@ -12,9 +12,10 @@ import { Nunito } from "next/font/google";
 import ANT_THEME_CUSTOMIZATION from "@/styles/AntDCustom";
 import Header from "@/components/Header";
 
-import "../styles/global.css";
 import Head from "next/head";
 import { RootStyleRegistry } from "@/components/RootStyleRegistry";
+
+import "../styles/global.css";
 
 const nunito = Nunito({ subsets: ["latin"] });
 
@@ -50,7 +51,7 @@ export default function RootLayout({
             <QueryClientProvider client={queryClient}>
               <Hydrate>
                 <Header />
-                {children}
+                <div className="flex flex-col grow p-8">{children}</div>
                 <ReactQueryDevtools initialIsOpen={false} />
               </Hydrate>
             </QueryClientProvider>

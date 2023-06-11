@@ -1,31 +1,30 @@
-import Link from "next/link";
-import { Button } from "antd";
-import { usePathname } from "next/navigation";
+import { Menu } from "antd";
+import { useRouter } from "next/navigation";
 
 const routes = [
   { label: "Home", pathname: "/" },
   { label: "Search", pathname: "/build-your-own" },
-  { label: "Pre-made tables", pathname: "/pre-made-tables", includes: true },
+  { label: "Pre-made tables", pathname: "/pre-made-tables" },
 ];
 
 const Header = () => {
-  const pathname = usePathname();
+  const router = useRouter();
 
   return (
-    <header className="flex gap-1 bg-white shadow py-1 px-4">
-      {routes.map((route, index) => {
-        const isActive = route.includes
-          ? pathname.includes(route.pathname)
-          : pathname === route.pathname;
-
-        return (
-          <Link href={route.pathname} key={index}>
-            <Button type="primary">{route.label}</Button>
-          </Link>
-        );
-      })}
+    <header>
+      <Menu
+        items={routes.map((route, index) => ({
+          key: index,
+          label: route.label,
+          onClick: () => router.push(route.pathname),
+        }))}
+        mode="horizontal"
+        style={{ padding: "0.25rem 2rem" }}
+      />
     </header>
   );
 };
+
+//
 
 export default Header;

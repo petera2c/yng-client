@@ -3,7 +3,6 @@
 import React from "react";
 import Link from "next/link";
 import moment from "moment";
-import Page from "../../components/containers/page";
 import { Button } from "antd";
 
 const TABLE_ROUTE_LIST = [
@@ -19,7 +18,7 @@ const TABLE_ROUTE_LIST = [
 
 const PremadeTables = () => {
   return (
-    <Page className="flex flex-col align-center p-8" title="Pre-made tables">
+    <div className="flex flex-col align-center p-8" title="Pre-made tables">
       <div className="flex flex-wrap justify-center gap-8 p-8">
         {TABLE_ROUTE_LIST.map((tableRoute, index) => (
           <TableRouteButton
@@ -29,7 +28,7 @@ const PremadeTables = () => {
           />
         ))}
       </div>
-    </Page>
+    </div>
   );
 };
 

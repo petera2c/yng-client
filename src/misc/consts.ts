@@ -1,41 +1,36 @@
 export const API_URL = "http://localhost:4001";
 export const QUARTERLY_OPTIONS = [
-  { label: "Q1", value: "Q1" },
-  { label: "Q2", value: "Q2" },
-  { label: "Q3", value: "Q3" },
-  { label: "Q4", value: "Q4" },
+  { value: "Q1" },
+  { value: "Q2" },
+  { value: "Q3" },
+  { value: "Q4" },
 ];
 export const QUARTERLY_FILTER_ATTRIBUTES = [
-  { label: "Cost and expenses growth", value: "cost_and_expenses" },
-  { label: "Cost of revenue growth", value: "cost_of_revenue" },
+  { value: "cost_and_expenses" },
+  { value: "cost_of_revenue" },
   {
-    label: "Depreciation and amortization growth",
     value: "depreciation_and_amortization",
   },
-  { label: "Ebitda growth", value: "ebitda" },
-  { label: "Eps growth", value: "eps" },
-  { label: "Epsdiluted growth", value: "epsdiluted" },
+  { value: "ebitda" },
+  { value: "eps" },
+  { value: "eps_diluted" },
   {
-    label: "General and administrative expenses growth",
     value: "general_and_administrative_expenses",
   },
-  { label: "Gross profit growth", value: "gross_profit" },
-  { label: "Income before tax growth", value: "income_before_tax" },
-  { label: "Income tax expense growth", value: "income_tax_expense" },
-  { label: "Net income growth", value: "net_income" },
-  { label: "Operating expenses growth", value: "operating_expenses" },
-  { label: "Operating income growth", value: "operating_income" },
+  { value: "gross_profit" },
+  { value: "income_before_tax" },
+  { value: "income_tax_expense" },
+  { value: "net_income" },
+  { value: "operating_expenses" },
+  { value: "operating_income" },
   {
-    label: "Research and development expenses growth",
     value: "research_and_development_expenses",
   },
-  { label: "Revenue growth", value: "revenue" },
+  { value: "revenue" },
   {
-    label: "Selling and marketing expenses growth",
     value: "selling_and_marketing_expenses",
   },
   {
-    label: "Selling general and administrative expenses growth",
     value: "selling_general_and_administrative_expenses",
   },
 ];

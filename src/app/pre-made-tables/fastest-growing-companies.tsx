@@ -4,7 +4,6 @@ import React from "react";
 import axios from "axios";
 import moment from "moment";
 import { useQuery } from "@tanstack/react-query";
-import Page from "../../components/containers/page";
 import { API_URL } from "../../misc/consts";
 import Company from "../../types/Company";
 
@@ -14,7 +13,7 @@ const FastestGrowingCompanies = () => {
   );
 
   return (
-    <Page title="Fastest growing companies">
+    <div title="Fastest growing companies">
       <div className="flex flex-col items-center justify-center gap-12">
         <h1 className="text-center mt-6">
           Fastest growing companies of {moment().year()}
@@ -31,7 +30,7 @@ const FastestGrowingCompanies = () => {
           ))}
         </div>
       </div>
-    </Page>
+    </div>
   );
 };
 
