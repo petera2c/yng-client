@@ -72,6 +72,10 @@ h4 {
   flex: 1;
 }
 
+.font-bold {
+  font-weight: bold;
+}
+
 .text-center {
   text-align: center;
 }
@@ -555,4 +559,14 @@ h4 {
 }
 .w-12\/12 {
   width: 100%;
+}
+
+.overflow-auto {
+  overflow: auto;
+}
+.overflow-scroll {
+  overflow: scroll;
+}
+.overflow-hidden {
+  overflow: hidden;
 }

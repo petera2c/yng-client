@@ -7,6 +7,19 @@ export const isNumeric = (str: string) => {
   ); // ...and ensure strings of whitespace fail
 };
 
+export const snakeToSpaces = (str: string) => str.replace(/_/g, " ");
+
+export const formatCurrency = (value: number) => {
+  return value.toLocaleString(navigator.language, {
+    currency: "usd",
+    maximumFractionDigits: 0,
+    style: "currency",
+  });
+};
+
+export const capitalize = (str: string) =>
+  str.charAt(0).toUpperCase() + str.slice(1);
+
 const consoleError = console.error.bind(console);
 console.error = (message, ...args) => {
   // Ignore specific error messages

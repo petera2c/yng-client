@@ -5,7 +5,6 @@ import { useRouter } from "next/navigation";
 import { useQuery } from "@tanstack/react-query";
 import axios from "axios";
 import { API_URL } from "../../../misc/consts";
-import Page from "../../../components/containers/page";
 const CompanyInfo = () => {
   const router = useRouter();
   const ticker = "router.query";
@@ -22,7 +21,7 @@ const CompanyInfo = () => {
   if (!stockData) return <></>;
 
   return (
-    <Page className="items-center" title="">
+    <div className="items-center">
       <div className="container max-w-xl flex flex-col gap-4">
         <h1 className="text-center">
           {stockData.company_name} ({ticker})
@@ -44,7 +43,7 @@ const CompanyInfo = () => {
         </div>
         {stockData.website && <div>Visit website</div>}
       </div>
-    </Page>
+    </div>
   );
 };
 

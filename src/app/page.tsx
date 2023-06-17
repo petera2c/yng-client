@@ -24,7 +24,7 @@ const Home = () => {
 
         <Link href="/build-your-own">
           <Button size="large" type="primary">
-            Use app
+            Go to search
           </Button>
         </Link>
       </div>

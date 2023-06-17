@@ -1,9 +1,9 @@
 export const API_URL = "http://localhost:4001";
 export const QUARTERLY_OPTIONS = [
-  { label: "Q1", value: "1" },
-  { label: "Q2", value: "2" },
-  { label: "Q3", value: "3" },
-  { label: "Q4", value: "4" },
+  { value: "Q1" },
+  { value: "Q2" },
+  { value: "Q3" },
+  { value: "Q4" },
 ];
 export const QUARTERLY_FILTER_ATTRIBUTES = [
   { label: "Cost and expenses", value: "cost_and_expenses" },
@@ -71,3 +71,6 @@ export const STOCK_FILTER_ATTRIBUTES = [
   { label: "Sector", value: "sector" },
   { label: "Ticker", value: "ticker" },
 ];
+
+export const COMPANY_GROWTH_FIELD = "growth";
+export const COMPANY_SYMBOL_FIELD = "symbol";

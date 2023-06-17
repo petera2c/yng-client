@@ -51,7 +51,9 @@ export default function RootLayout({
             <QueryClientProvider client={queryClient}>
               <Hydrate>
                 <Header />
-                <div className="flex flex-col grow p-8">{children}</div>
+                <div className="flex flex-col grow overflow-hidden p-8">
+                  {children}
+                </div>
                 <ReactQueryDevtools initialIsOpen={false} />
               </Hydrate>
             </QueryClientProvider>
