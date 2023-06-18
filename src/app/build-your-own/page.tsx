@@ -118,10 +118,10 @@ const App = () => {
 
   return (
     <div className="flex grow overflow-hidden">
-      <div className="flex grow overflow-hidden gap-8">
+      <div className="flex grow overflow-hidden">
         <div className="flex flex-col">
           <div
-            className="grid overflow-auto gap-3"
+            className="grid overflow-auto gap-3 pr-8"
             style={{ gridTemplateColumns: "auto 1fr 1fr", minWidth: "300px" }}
           >
             <div className="flex items-center">From:</div>
@@ -172,16 +172,17 @@ const App = () => {
               <Input
                 suffix="$"
                 onChange={(e) => {
-                  if (isNumeric(e.target.value)) {
-                    setAmount(Number(e.target.value));
+                  const value = e.target.value.replace(/,/g, "");
+
+                  if (isNumeric(value)) {
+                    setAmount(Number(value));
                   }
                 }}
                 placeholder="Amount"
                 style={{
                   width: "128px",
                 }}
-                type="number"
-                value={amount}
+                value={amount.toLocaleString()}
               />
             </div>
             <Button
@@ -233,7 +234,7 @@ const App = () => {
                   <span className="px-2" style={{ color: "#0074D9" }}>
                     {filter.comparisonOperator}
                   </span>
-                  {filter.amount}
+                  {formatCurrency(filter.amount)}
                   <CloseCircleOutlined style={{ color: "red" }} rev="" />
                 </Button>
               );
@@ -243,7 +244,7 @@ const App = () => {
 
         <div style={{ background: "rgba(5, 5, 5, 0.12)", width: "1px" }} />
 
-        <div className="flex flex-col grow overflow-hidden gap-4">
+        <div className="flex flex-col grow overflow-hidden gap-4 pl-8">
           <div className="flex items-center gap-2">
             Order by:
             <Select

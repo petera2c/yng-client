@@ -14,7 +14,7 @@ const Home = () => {
           <h1 className="text-center text-6xl">
             Unlock Financial Insights
             <br />
-            with FinSearch!
+            with BudgetBeaver!
           </h1>
           <h4 className="text-center w-8/12">
             Effortlessly discover and invest in stocks with strong growth
@@ -24,7 +24,7 @@ const Home = () => {
 
         <Link href="/build-your-own">
           <Button size="large" type="primary">
-            Go to search
+            Start
           </Button>
         </Link>
       </div>

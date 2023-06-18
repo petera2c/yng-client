@@ -2,16 +2,15 @@
 
 import React from "react";
 import Link from "next/link";
-import moment from "moment";
-import { Button } from "antd";
+import "./styles.css";
 
 const TABLE_ROUTE_LIST = [
   {
-    label: `Fastest Growing companies of ${moment().year()}`,
+    label: `Fastest growing companies during 2008 recession`,
     pathname: "/pre-made-tables/fastest-growing-companies",
   },
   {
-    label: `Fastest Growing dividends of ${moment().year()}`,
+    label: `Most profitable companies during the pandemic`,
     pathname: "/pre-made-tables",
   },
 ];
@@ -40,8 +39,11 @@ const TableRouteButton = ({
   pathname: string;
 }) => {
   return (
-    <Link href={pathname}>
-      <Button>{label}</Button>
+    <Link className="text-decoration-none" href={pathname}>
+      <div className="blog-card p-2 rounded">
+        <img className="w-12/12" src="/test-img.png" />
+        <p className="text-center">{label}</p>
+      </div>
     </Link>
   );
 };
